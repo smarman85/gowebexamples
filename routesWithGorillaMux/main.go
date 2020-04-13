@@ -101,5 +101,9 @@ func main() {
     fmt.Fprintf(w, "You've requested the book: %s on page %s\n", title, page)
   })
 
+  r.HandleFunc("/hello", func(w http.ResponseWriter, r *http.Request) {
+    fmt.Fprintf(w, "Hello\n")
+  })
+
   http.ListenAndServe(":8088", r)
 }
